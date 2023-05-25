@@ -33,8 +33,7 @@ public class Reservation implements Serializable {
 	public Reservation(Date date, List<Salon> salons, List<Prestation> prestations) {
 		super();
 		this.date = date;
-		this.salons = salons;
-		this.prestations = prestations;
+
 	}
 
 	public Long getId() {
@@ -53,25 +52,10 @@ public class Reservation implements Serializable {
 		this.date = date;
 	}
 
-	public List<Salon> getSalons() {
-		return salons;
-	}
-
-	public void setSalons(List<Salon> salons) {
-		this.salons = salons;
-	}
-
-	public List<Prestation> getPrestations() {
-		return prestations;
-	}
-
-	public void setPrestations(List<Prestation> prestations) {
-		this.prestations = prestations;
-	}
 
 	@Override
 	public String toString() {
-		return "Reservation [id=" + id + ", date=" + date + ", salons=" + salons + ", prestations=" + prestations + "]";
+		return "Reservation [id=" + id + ", date=" + date + "]";
 	}
 
 }
