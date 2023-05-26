@@ -19,30 +19,30 @@ public class UtilisateurController {
 	IUtilisateurService utilisateurService;
 
 	// GET
-	@RequestMapping(value = "utilisateur", method = RequestMethod.GET)
+	@RequestMapping(value = "utilisateurs", method = RequestMethod.GET)
 	public List<Utilisateur> findAll() {
 		return utilisateurService.findAll();
 	}
 
-	@RequestMapping(value = "utilisateur/{idUtilisateur}", method = RequestMethod.GET)
+	@RequestMapping(value = "utilisateurs/{idUtilisateur}", method = RequestMethod.GET)
 	public Utilisateur findOne(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		return utilisateurService.findOne(idUtilisateur);
 	}
 
 	// POST
-	@RequestMapping(value = "utilisateur", method = RequestMethod.POST)
+	@RequestMapping(value = "utilisateurs", method = RequestMethod.POST)
 	public Utilisateur saveEntite(@RequestBody Utilisateur utilisateur) {
 		return utilisateurService.save(utilisateur);
 	}
 
 	// DELETE
-	@RequestMapping(value = "utilisateur/{idUtilisateur}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "utilisateurs/{idUtilisateur}", method = RequestMethod.DELETE)
 	public void deleteEntite(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		utilisateurService.delete(idUtilisateur);
 	}
 
 	// PUT
-	@RequestMapping(value = "utilisateur/{idUtilisateur}", method = RequestMethod.PUT)
+	@RequestMapping(value = "utilisateurs/{idUtilisateur}", method = RequestMethod.PUT)
 	public Utilisateur updateEntite(@PathVariable("idUtilisateur") Long idUtilisateur, @RequestBody Utilisateur utilisateur) {
 		Utilisateur currentUtilisateur = utilisateurService.findOne(idUtilisateur);
 		currentUtilisateur.setIdUtilisateur(utilisateur.getIdUtilisateur());

@@ -19,30 +19,30 @@ public class RoleController {
 	IRoleService roleService;
 
 	// GET
-	@RequestMapping(value = "role", method = RequestMethod.GET)
+	@RequestMapping(value = "roles", method = RequestMethod.GET)
 	public List<Role> findAll() {
 		return roleService.findAll();
 	}
 
-	@RequestMapping(value = "role/{idRole}", method = RequestMethod.GET)
+	@RequestMapping(value = "roles/{idRole}", method = RequestMethod.GET)
 	public Role findOne(@PathVariable("idRole") Long idRole) {
 		return roleService.findOne(idRole);
 	}
 
 	// POST
-	@RequestMapping(value = "role", method = RequestMethod.POST)
+	@RequestMapping(value = "roles", method = RequestMethod.POST)
 	public Role saveEntite(@RequestBody Role role) {
 		return roleService.save(role);
 	}
 
 	// DELETE
-	@RequestMapping(value = "role/{idRole}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "roles/{idRole}", method = RequestMethod.DELETE)
 	public void deleteEntite(@PathVariable("idRole") Long idRole) {
 		roleService.delete(idRole);
 	}
 
 	// PUT
-	@RequestMapping(value = "role/{idRole}", method = RequestMethod.PUT)
+	@RequestMapping(value = "roles/{idRole}", method = RequestMethod.PUT)
 	public Role updateEntite(@PathVariable("idRole") Long idRole, @RequestBody Role role) {
 		Role currentRole = roleService.findOne(idRole);
 		currentRole.setIdRole(role.getIdRole());
