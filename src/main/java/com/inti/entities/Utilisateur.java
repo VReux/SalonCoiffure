@@ -43,7 +43,10 @@ public class Utilisateur implements Serializable {
 			joinColumns = @JoinColumn(name = "id_Utilisateur", referencedColumnName = "idUtilisateur"), 
 			inverseJoinColumns = @JoinColumn(name = "id_Role", referencedColumnName = "idRole"))
 	private Set<Role> role = new HashSet<>();
-
+	@OneToMany(mappedBy="utilisateurRes")
+	private List<Reservation> reservations = new ArrayList<>();
+	
+	
 	public Utilisateur() {
 
 	}
